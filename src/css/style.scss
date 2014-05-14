@@ -1,0 +1,64 @@
+@import 'normalize';
+@import 'clearfix';
+
+/* General */
+/* -------------------------------------------------- */
+
+html, body {
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
+
+/* Width and center control */
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+/* Header */
+/* -------------------------------------------------- */
+
+header {
+  width: 100%;
+  min-height: 50px;
+  border-bottom: 1px solid #ddd;
+
+  /* Main page heading */
+  a#title {
+    font-size: 1.5em;
+    line-height: 50px;
+  }
+
+  /* Right header navigation */
+  nav {
+    float: right;
+    height: 50px;
+
+    ul {
+      li {
+        list-style: none;
+        display: inline-block;
+        text-transform: lowercase;
+      }
+    }
+  }
+}
+
+/* Footer */
+/* -------------------------------------------------- */
+
+footer {
+  width: 100%;
+  border-top: 1px solid #ddd;
+}
