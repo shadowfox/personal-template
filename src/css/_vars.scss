@@ -1,0 +1,18 @@
+/*
+Template-wide CSS variables
+*/
+
+
+// Structure
+// --------------------------------------------------
+
+// Maximum container width for desktops
+$default_container_width: 800px;
+
+// Styles
+// --------------------------------------------------
+
+$main_font_stack: "Open Sans", sans-serif;
+$header_font_stack: $main_font_stack;
+
+$base_font_size: 16px;

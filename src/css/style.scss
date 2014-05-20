@@ -1,5 +1,6 @@
 @import 'normalize';
 @import 'clearfix';
+@import 'vars';
 @import 'nav';
 
 // General
@@ -10,8 +11,8 @@ html, body {
 }
 
 html {
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
+  font-size: $base_font_size;
+  font-family: $main_font_stack;
 }
 
 a {
@@ -21,6 +22,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
+  font-family: $header_font_stack;
   font-weight: 400;
   margin-bottom: 5px;
 }
@@ -37,16 +39,14 @@ h6 { font-size: 1.1em; }
 
 // Default container styles
 .container {
-  max-width: 800px; 
+  max-width: $default_container_width; 
   margin: 0 auto;
-  border: 1px solid black;
 }
 
 // Tablet
 @media (max-width: 992px) {
   .container {
     width: 90%;
-    border: 3px solid red;
   }
 }
 
@@ -55,7 +55,6 @@ h6 { font-size: 1.1em; }
   html { font-size: 14px; }
   .container {
     width: 100%;
-    border: 3px solid green;
     padding: 0 10px;
   }
 }
