@@ -4,26 +4,25 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     sass: {
-    	dist: {
-    		files: [{
-    			expand: true,
-    			cwd: './src/css',
-    			src: ['*.scss'],
-    			dest: './css',
-    			ext: '.css'
-    		}]
-    	}
+        dist: {
+            options: {
+              style: 'expanded'
+            },
+            files: {
+                'css/style.css': 'src/css/style.scss'
+            }
+        }
     },
     cssmin: {
       combine: {
         files: {
-          './css/style.min.css': ['./css/style.css']
+          'css/style.min.css': ['css/style.css']
         }
       }
     },
     watch: {
       css: {
-        files: './src/css/*.scss',
+        files: 'src/css/*.scss',
         tasks: ['sass'],
         options: {
           debounceDelay: 250
