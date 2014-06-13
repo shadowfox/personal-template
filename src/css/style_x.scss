@@ -30,7 +30,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $header_font_stack;
   color: $header_color;
   margin-bottom: 5px;
-  margin-top: 25px;
 }
 
 // Media queries
@@ -55,9 +54,12 @@ h1, h2, h3, h4, h5, h6 {
   .container {
     width: 100%;
   }
-  header a#title { padding-left: 10px; }
-  article { padding: 0 10px; }
+  header, article, footer {
+  	padding: 0 10px;
+  }
 }
+
+
 
 // Header
 // --------------------------------------------------
@@ -78,6 +80,40 @@ header {
   }
 
   // See nav partial for the top nav bar
+}
+
+// Main content
+// --------------------------------------------------
+
+// An optional full-span image above the article heading
+div#page-image {
+  height: 320px;
+  background: transparent url('../images/1.jpg') -1200px -1560px no-repeat;
+  opacity: 0.7;
+}
+
+
+article {
+  p {
+    line-height: 1.5;
+  }
+
+  // Special styles to h1 and small to create a heading plus metadata
+  div#article-header {
+
+    h1 {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      line-height: 1;
+    }
+
+    small {
+      color: #666;
+      letter-spacing: 0.8px;
+
+      abbr { border-bottom: none }
+    }
+  }
 }
 
 // Content styles
@@ -104,60 +140,29 @@ pre {
     font-family: Consolas, "Courier New", monospace;
   }
 }
+h1,h2,h3,h4{font-weight: bold;}
+// Recent posts list
+// ---------------------------------------------------
 
-blockquote {
-  border-left: 5px solid #E6E6E6;
-  margin-left: 0px;
-  padding: 1px 0px;
+div#recent-posts {
+  background-color: #F5F5F5;
+  border-top: 2px solid #E6E6E6;
+  padding-bottom: 20px;
 
-  p {
-    margin-left: 10px;
-  }
-}
-
-// Main content
-// --------------------------------------------------
-
-article {
-  p {
-    line-height: 1.5;
+  ul {
+    margin: 0;
+    padding-left: 20px;
   }
 
-  // Special styles to h1 and small to create a heading plus metadata
-  div#article-header {
+  ul > li {
+    list-style-type: none;
 
-    margin-bottom: 30px;
+    font-size: 1.2em;
+    margin: 10px 0px;
 
-    h1 {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      line-height: 1;
-    }
+    &:last-of-type { margin-bottom: 0; }
 
-    ul.meta {
-      padding-left: 0;
-      margin-top: 5px;
-    }
-
-    ul.meta > li {
-      color: #666;
-      letter-spacing: 0.8px;
-      font-size: 90%;
-      list-style: none;
-      padding-left: 16px;
-      
-      // Single line for large screens
-      display: inline-block;
-      margin-right: 9px;
-
-      // Metadata types
-      &.author { background: transparent url('../images/user_9x12.png') 0px 4px no-repeat; }
-      &.datetime { background: transparent url('../images/clock_12x12.png') 0px 4px no-repeat; }
-      &.tags { background: transparent url('../images/tag_12x12.png') 0px 4px no-repeat; }
-      &.comments { background: transparent url('../images/comment_12x9.png') 0px 4px no-repeat; }
-
-      abbr { border-bottom: none }
-    }
+    time { margin-right: 20px; }
   }
 }
 
@@ -167,14 +172,13 @@ article {
 footer {
   width: 100%;
   border-top: 1px solid #ddd;
-  background-color: #eee;
-  margin-top: 60px;
+  background-color: #fff;
   padding: 20px 0px;
   min-height: 50px;
 
   p {
-    text-align: center;
-    margin: 0;
-    color: #555;
+  	text-align: center;
+  	margin: 0;
+  	color: #555;
   }
 }
