@@ -42,14 +42,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-// Tablet
+// Large tablet
 @media (max-width: 992px) {
   .container {
     width: 90%;
   }
 }
 
-// Large phones and tablets
+// Phones and tablets
 @media (max-width: 480px) {
   html { font-size: 112.5%; }
   .container {
@@ -57,6 +57,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   header a#title { padding-left: 10px; }
   article { padding: 0 10px; }
+
+  // Recent post titles below timestamps
+  div#recent-posts ul > li time {
+    display: block;
+  }
+
 }
 
 // Header
@@ -172,7 +178,7 @@ div#recent-posts {
   background-color: #F5F5F5;
   border-top: 2px solid #E6E6E6;
   border-bottom: 2px solid #E6E6E6;
-  padding-bottom: 30px;
+  padding: 0 0 30px 10px;
 
   ul {
     margin: 0;
