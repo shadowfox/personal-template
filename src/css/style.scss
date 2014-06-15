@@ -47,6 +47,8 @@ h1, h2, h3, h4, h5, h6 {
   .container {
     width: 90%;
   }
+
+  .hidden-tablet { display: none !important; }
 }
 
 // Phones and tablets
@@ -63,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
   }
 
+  .hidden-tablet, .hidden-phone { display: none !important; }
 }
 
 // Header
@@ -88,6 +91,18 @@ header {
 
 // Content styles
 // --------------------------------------------------
+
+img {
+  border: none;
+  vertical-align: middle;
+
+  &.responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 
 // Inline code references and keyboard key elements
 code, kbd {
@@ -120,6 +135,9 @@ blockquote {
     margin-left: 10px;
   }
 }
+
+.float-left { float: left !important; }
+.float-right { float: right !important; }
 
 // Main content
 // --------------------------------------------------
