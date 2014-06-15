@@ -118,6 +118,10 @@ blockquote {
 // Main content
 // --------------------------------------------------
 
+div#main {
+  margin-bottom: 40px;
+}
+
 article {
   p {
     line-height: 1.5;
@@ -161,16 +165,41 @@ article {
   }
 }
 
+// Recent posts list
+// ---------------------------------------------------
+
+div#recent-posts {
+  background-color: #F5F5F5;
+  border-top: 2px solid #E6E6E6;
+  border-bottom: 2px solid #E6E6E6;
+  padding-bottom: 30px;
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  ul > li {
+    list-style-type: none;
+
+    font-size: 1.2em;
+    margin: 10px 0px;
+
+    &:last-of-type { margin-bottom: 0; }
+
+    time { margin-right: 20px; }
+  }
+}
+
 // Footer
 // ---------------------------------------------------
 
 footer {
   width: 100%;
-  border-top: 1px solid #ddd;
-  background-color: #eee;
-  margin-top: 60px;
+  //border-top: 2px solid #ddd;
+  //background-color: #eee;
+  margin-top: 0px;
   padding: 20px 0px;
-  min-height: 50px;
 
   p {
     text-align: center;
