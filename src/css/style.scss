@@ -33,49 +33,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 25px;
 }
 
-// Media queries
-// -------------------------------------------------- 
 
 // Default container styles
 .container {
   max-width: $default_container_width; 
   margin: 0 auto;
-}
-
-// Large tablet
-@media (max-width: 992px) {
-  .container {
-    width: 90%;
-  }
-
-  .hidden-tablet { display: none !important; }
-}
-
-// Phones and tablets
-@media (max-width: 480px) {
-  html { font-size: 112.5%; }
-  .container {
-    width: 100%;
-  }
-
-  header a#title {
-    padding-left: 10px;
-  }
-
-  article {
-    padding: 0 10px;
-
-    div#article-header h1 {
-      margin-top: 10px;
-    }
-  }
-
-  // Recent post titles below timestamps
-  div#recent-posts ul > li time {
-    display: block;
-  }
-
-  .hidden-tablet, .hidden-phone { display: none !important; }
 }
 
 // Header
@@ -84,8 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 header {
   width: 100%;
   height: 60px;
-  border-bottom: 1px solid #ddd;
-  background-color: #eee;
+  border-bottom: 2px solid #E6E6E6;
 
   /* Main page heading */
   a#title {
@@ -131,9 +92,9 @@ blockquote {
   }
 }
 
-.float-left { float: left !important; }
-.float-right { float: right !important; }
-.hidden { display: none !important; }
+.float-left { float: left; }
+.float-right { float: right; }
+.hidden { display: none; }
 
 
 // An optional full-span image above the article heading
@@ -164,7 +125,6 @@ article {
 
   // Special styles to h1 and small to create a heading plus metadata
   div#article-header {
-
     margin-bottom: 30px;
 
     h1 {
@@ -200,43 +160,118 @@ article {
   }
 }
 
-// Recent posts list
+
+// Footer
 // ---------------------------------------------------
 
-div#recent-posts {
-  background-color: #F5F5F5;
-  border-top: 2px solid #E6E6E6;
-  border-bottom: 2px solid #E6E6E6;
-  padding: 0 0 30px 10px;
+footer {
 
+  border-top: 5px solid #E6E6E6;
+  background-color: #F5F5F5;
+
+  h3 { margin-top: 10px; }
+
+  // Both lists
   ul {
     margin: 0;
     padding-left: 20px;
   }
 
   ul > li {
-    list-style-type: none;
-
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin: 10px 0px;
 
     &:last-of-type { margin-bottom: 0; }
-
-    time { margin-right: 20px; }
   }
-}
 
-// Footer
-// ---------------------------------------------------
+  // Recent posts list
+  div#recent-posts {
+    width: 75%;
+    padding-left: 10px;
 
-footer {
-  width: 100%;
-  margin-top: 0px;
-  padding: 20px 0px;
+    ul {
+      list-style-type: square;
+    }
+
+    ul > li time {
+      margin-right: 20px;
+    }
+  }
+
+  // Social links or something
+  div#links {
+    padding-left: 10px;
+    width: 20%;
+
+    ul {
+      list-style: none;
+    
+      a {
+        padding-left: 25px;
+        &.feed { background: transparent url('../images/feed_20x20.png') 0px 0px no-repeat; }
+        &.github { background: transparent url('../images/github_20x20.png') 0px 0px no-repeat; }
+        &.gplus { background: transparent url('../images/gplus_20x20.png') 0px 0px no-repeat; }
+      }
+    }
+  }
+
+  // Border between lists and bottom text
+  .container:first-child {
+    border-bottom: 2px solid #E6E6E6;
+    padding-bottom: 10px;
+  }
 
   p {
     text-align: center;
     margin: 0;
+    margin: 10px 0px;
     color: #555;
   }
+
+}
+// Media queries
+// -------------------------------------------------- 
+
+// Large tablet
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+
+  .hidden-tablet { display: none !important; }
+}
+
+// Phones and tablets
+@media (max-width: 480px) {
+  html {
+    font-size: 110%;
+  }
+  .container {
+    width: 100%;
+  }
+
+  header a#title {
+    padding-left: 10px;
+  }
+
+  article {
+    padding: 0 10px;
+
+    div#article-header h1 {
+      margin-top: 10px;
+    }
+  }
+
+  // Recent post titles below timestamps
+  div#recent-posts ul > li {
+    font-size: 90%;
+    time { display: block; }
+  }
+
+  // Don't float the footer lists
+  footer {
+    div#recent-posts, div#links { float: none; }
+  }
+
+  .hidden-tablet, .hidden-phone { display: none !important; }
 }
