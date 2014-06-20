@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Template</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/pygments.css">
 </head>
 <body>
   <input type="checkbox" id="toggle" />
@@ -22,6 +23,10 @@
       </nav>
     </div>
   </header>
+
+  <div id="page-image">
+    <img src="images/image.png">
+  </div>
 
   <div id="main">
     <div class="container">
@@ -54,12 +59,13 @@
 
           <p>This paragraph has <code>code</code> samples <code>in it</code>.</p>
 
-          <pre><code># This is a code block
-def hello():
-    print 'Hello World'
+<code class="syntax"><pre><span class="c"># This is a code block</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="s">&#39;Hello World&#39;</span>
 
-if __name__ == "__main__":
-    hello()</code></pre>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">hello</span><span class="p">()</span>
+</pre></code>
 
           <h4>Heading 4</h4>
           <p>Nam tincidunt nunc ut interdum rutrum. Pellentesque lacinia in elit a euismod. Pellentesque volutpat orci sit amet rutrum ultrices. Curabitur eget ipsum facilisis, gravida libero in, convallis dolor. Integer vitae ornare nibh. Fusce aliquam dui sodales sem iaculis vehicula. <a href="#">Fusce at nisl eros</a>. In vitae placerat eros.</p>

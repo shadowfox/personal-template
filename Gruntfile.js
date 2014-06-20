@@ -9,14 +9,15 @@ module.exports = function(grunt) {
               style: 'expanded'
             },
             files: {
-                'css/style.css': 'src/css/style.scss'
+                'css/style.css': 'src/css/style.scss',
+                'css/pygments.css': 'src/css/pygments.scss'
             }
         }
     },
     cssmin: {
       combine: {
         files: {
-          'css/style.min.css': ['css/style.css']
+          'css/style.min.css': ['css/style.css', 'css/pygments.css']
         }
       }
     },
