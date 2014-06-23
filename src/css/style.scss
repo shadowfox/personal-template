@@ -17,11 +17,11 @@ html {
 
 body {
   // Use an off-white body
-  background-color: #fcfcfc;
+  background-color: $color_background;
 }
 
 a {
-  color: $alt2_color;
+  color: $color_alt2;
   text-decoration: none;
   &:hover { text-decoration: underline; }
 }
@@ -46,13 +46,14 @@ h1, h2, h3, h4, h5, h6 {
 header {
   width: 100%;
   height: 60px;
-  border-bottom: 2px solid #E6E6E6;
+  border-bottom: 2px solid $color_main2;
+  background-color: $color_main1;
 
   /* Main page heading */
   a#title {
     font-size: 1.5em;
     line-height: 60px;
-    color: $alt1_color;
+    color: $color_alt1;
 
     &:hover { text-decoration: none; }
   }
@@ -77,13 +78,13 @@ img {
 // Inline code references and keyboard key elements
 code, kbd {
   border-radius: 3px;
-  background-color: #F5F5F5;
+  background-color: $color_main1;
   padding: 2px 3px;
   white-space: nowrap;
 }
 
 blockquote {
-  border-left: 5px solid #E6E6E6;
+  border-left: 5px solid $color_main2;
   margin-left: 0px;
   padding: 1px 0px;
 
@@ -103,6 +104,7 @@ div#page-image {
   position: relative;
 
   img {
+    opacity: 0.6;
     width: 100%;
     height: auto;
     // Don't shrink past this point on small devices
@@ -110,6 +112,18 @@ div#page-image {
   }
 }
 
+// Post lists
+ul.post-list {
+  margin: 0;
+  padding-left: 20px;
+
+  li {
+    margin: 10px 0px;
+    &:last-of-type { margin-bottom: 0; }
+
+    time { margin-right: 20px; }
+  }
+}
 
 // Main content
 // --------------------------------------------------
@@ -160,65 +174,56 @@ article {
   }
 }
 
-
 // Footer
 // ---------------------------------------------------
 
 footer {
+  border-top: 2px solid $color_main2;
+  border-bottom: 2px solid $color_main2;
+  background-color: $color_main1;
 
-  border-top: 5px solid #E6E6E6;
-  background-color: #F5F5F5;
-
-  h3 { margin-top: 10px; }
-
-  // Both lists
-  ul {
-    margin: 0;
-    padding-left: 20px;
-  }
-
-  ul > li {
-    font-size: 1.1em;
-    margin: 10px 0px;
-
-    &:last-of-type { margin-bottom: 0; }
-  }
+  h3 { margin-top: 20px; }
 
   // Recent posts list
   div#recent-posts {
     width: 75%;
     padding-left: 10px;
+    font-size: 1.1em;
 
     ul {
       list-style-type: square;
-    }
-
-    ul > li time {
-      margin-right: 20px;
     }
   }
 
   // Social links or something
   div#links {
-    padding-left: 10px;
     width: 20%;
+    padding-left: 10px;
+    font-size: 1.1em;
 
     ul {
       list-style: none;
-    
-      a {
-        padding-left: 25px;
-        &.feed { background: transparent url('../images/feed_20x20.png') 0px 0px no-repeat; }
-        &.github { background: transparent url('../images/github_20x20.png') 0px 0px no-repeat; }
-        &.gplus { background: transparent url('../images/gplus_20x20.png') 0px 0px no-repeat; }
+      padding-left: 20px;
+      margin: 0;
+
+      li {
+        margin: 10px 0px;
+        &:last-of-type { margin-bottom: 0; }
+
+        a {
+          padding-left: 25px;
+          &.feed { background: transparent url('../images/feed_20x20.png') 0px 0px no-repeat; }
+          &.github { background: transparent url('../images/github_20x20.png') 0px 0px no-repeat; }
+          &.gplus { background: transparent url('../images/gplus_20x20.png') 0px 0px no-repeat; }
+        }
       }
     }
   }
 
   // Border between lists and bottom text
-  .container:first-child {
-    border-bottom: 2px solid #E6E6E6;
-    padding-bottom: 10px;
+  .footer-top {
+    border-bottom: 2px solid $color_main2;
+    padding-bottom: 20px;
   }
 
   p {
